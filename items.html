@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DnD Campaign Manager</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <header>
+    <h1>
+      <img
+        src="android-chrome-192x192.png"
+        alt="DnD favicon"
+        title="DnD favicon"
+      />
+      Campaign Manager
+    </h1>
+  </header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./campaigns.html">Campaigns</a>
+    <a href="./locations.html">Locations</a>
+    <a href="./monsters.html">Monsters</a>
+    <a href="./actions.html">Actions</a>
+    <a href="./items.html">Items</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Items</h2>
+      <article>
+        <table name="itemsView" id="itemsView">
+          <thead>
+            <tr>
+              <th>
+                <a 
+                  href="#"
+                  onclick="newItem()"
+                >
+                  New
+                </a>
+              </th>
+              <th>
+              </th>
+              <th>
+                ID
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Value
+              </th>
+              <th>
+                Weight
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateItem(1)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeItem(1)"
+                >
+                Delete
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                Amulet
+              </td>
+              <td>
+                5
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateItem(2)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeItem(2)"
+                >
+                Delete
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                Chain Shirt
+              </td>
+              <td>
+                50
+              </td>
+              <td>
+                20
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateItem(3)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeItem(3)"
+                >
+                Delete
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                Dagger
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateItem(4)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeItem(4)"
+                >
+                Delete
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                Quarterstaff
+              </td>
+              <td>
+                0
+              </td>
+              <td>
+                4
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateItem(5)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeItem(5)"
+                >
+                Delete
+              </td>
+              <td>
+                5
+              </td>
+              <td>
+                Dart
+              </td>
+              <td>
+                0
+              </td>
+              <td>
+                0.25
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <form 
+          action="/items.html"
+          method="GET"
+          name="itemsFormView" 
+          id="itemsFormView"
+        >
+        <fieldset>
+          <legend>
+            Item Info
+          </legend>
+          <label
+            for="itemName"
+          >
+            Item Name
+          </label>
+          <input
+            type="text"
+            name="itemName"
+            id="itemName"
+            size="50"
+            required
+            aria-required="true"
+            placeholder="Item Name"
+            autofocus
+          >
+          <label
+            for="value"
+          >
+            Value
+          </label>
+          <input
+            type="number"
+            name="value"
+            id="value"
+            size="20"
+            required
+            aria-required="true"
+            placeholder="0"
+            value="0"
+          >
+          <label
+            for="weight"
+          >
+            Value
+          </label>
+          <input
+            type="number"
+            name="weight"
+            id="weight"
+            size="20"
+            required
+            aria-required="true"
+            placeholder="0"
+            value="0"
+          >
+          <div id="formButtons">
+            <label
+              for="submitItemInfo"
+            >
+            </label>
+            <button
+              type="submit"
+              name="submitItemInfo"
+              id="submitItemInfoBtn"
+              onclick="browseItems('itemsFormView')"
+            >
+              Save
+            </button>
+            <label
+              for="discardItemInfo"
+            >
+            </label>
+            <button
+              name="discardItemInfo"
+              id="discardItemInfoBtn"
+              onclick="browseItems('itemsFormView')"
+            >
+              Cancel
+            </button>
+          </div>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

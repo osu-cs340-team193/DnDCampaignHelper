@@ -1,0 +1,231 @@
+/* Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root 
+{
+  /* maroon color palette */
+  --redBrown: rgba(59, 35, 51, 1);
+  --pink: rgba(204, 153, 173, 1);
+  --pinkTrans: rgba(204, 153, 173, 0.5);
+  --tealBlue: rgba(5, 117, 162, 1);
+  --maroon: rgba(128, 0, 0, 1);
+  --lightBlue: rgba(101, 198, 236, 1);
+  --lightBlueTrans: rgba(101, 198, 236, 0.5);
+  --lightGreyTrans: rgba(220, 220, 220, 0.5);
+  --ivoryTrans: rgba(250, 249, 246, 0.5);
+}
+
+body
+{
+  margin: 0 auto;
+  max-width: 1000px;
+
+  /* center all items in body */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.25;
+
+  background-color: var(--lightGreyTrans);
+}
+
+header
+{
+  color: var(--maroon);
+}
+
+header img 
+{
+  /* place DnD logo on same line as website name */
+  max-width: 60px;
+  vertical-align: middle;
+}
+
+nav
+{
+  padding-bottom: 15px;
+}
+
+a
+{
+  text-decoration: none;
+  color: var(--tealBlue);
+
+  padding: 5px;
+}
+
+a:hover
+{
+  color: var(--pink);
+}
+
+main
+{
+  min-width: 80%;
+}
+
+h2
+{
+  color: var(--redBrown);
+
+  text-align: center;
+}
+
+table
+{
+  /* remove spacing between cells */
+  border-collapse: collapse;
+
+  min-width: 100%;
+
+  /* make rows taller */
+  line-height: 2.5em;
+
+  font-size: 1.1em;
+}
+
+thead
+{
+  text-align: center;
+}
+
+tbody
+{
+  text-align: center;
+}
+
+tr, 
+td, 
+th
+{
+  border: solid var(--redBrown) 1px;
+
+  /* pad text */
+  padding: 5px 10px;
+}
+
+td:nth-child(even)
+{
+  background-color: var(--lightBlueTrans);
+}
+
+td:nth-child(odd)
+{
+  background-color: var(--pinkTrans);
+}
+
+/* remove background color for edit + delete buttons */
+th,
+td:nth-child(1),
+td:nth-child(2)
+{
+  background-color: var(--ivoryTrans);
+}
+
+/* left align crud buttons */
+th:nth-child(1),
+th:nth-child(2),
+td:nth-child(1),
+td:nth-child(2)
+{
+  text-align: left;
+}
+
+/* form views */
+form
+{
+  /* hide form views by default */
+  visibility: hidden;
+
+  /* center on page */
+  margin: auto;
+
+  background-color: var(--ivoryTrans);
+}
+
+fieldset
+{
+  border: solid var(--redBrown) 2px;
+}
+
+legend
+{
+  color: var(--maroon);
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+label
+{
+  /* each label has it's own row */
+  display: flex;
+
+  /* spacing between rows */
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input[type="text"]
+{
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+input[type="number"]
+{
+  width: 100px;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+textarea
+{
+  width: 400px;
+  height: 100px; 
+  padding: 5px;
+  font-size: 0.9em;
+  resize: none;
+}
+
+select
+{
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+#formButtons
+{
+  display: flex;
+  flex-direction: row;
+
+  /* center in form */
+  margin: auto;
+  width: 50%;
+
+  /* spacing with form fields */
+  margin-top: 20px;
+
+  padding: 10px;
+}
+
+button
+{
+  width: 150px;
+  padding: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--ivoryTrans);
+  background-color: var(--tealBlue);
+  border: solid var(--tealBlue) 2px;
+
+  /* align to center and add spacing between */
+  margin: auto;
+  margin-right: 20px;
+}
+
+button:hover
+{
+  background-color: var(--pink);
+}

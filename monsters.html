@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DnD Campaign Manager</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <header>
+    <h1>
+      <img
+        src="android-chrome-192x192.png"
+        alt="DnD favicon"
+        title="DnD favicon"
+      />
+      Campaign Manager
+    </h1>
+  </header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./campaigns.html">Campaigns</a>
+    <a href="./locations.html">Locations</a>
+    <a href="./monsters.html">Monsters</a>
+    <a href="./actions.html">Actions</a>
+    <a href="./items.html">Items</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Monsters</h2>
+      <article>
+        <table name="monstersView" id="monstersView">
+          <thead>
+            <tr>
+              <th>
+                <a 
+                  href="#"
+                  onclick="newMonster()"
+                >
+                  New
+                </a>
+              </th>
+              <th>
+              </th>
+              <th>
+                ID
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Armor Class
+              </th>
+              <th>
+                Hit Points
+              </th>
+              <th>
+                Type
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateMonster(1)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeMonster(1)"
+                >
+                Delete
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                Swarm of bats
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                22
+              </td>
+              <td>
+                Diminutive Animal
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateMonster(2)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeMonster(2)"
+                >
+                Delete
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                Meenlock
+              </td>
+              <td>
+                15
+              </td>
+              <td>
+                31
+              </td>
+              <td>
+                Fey
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateMonster(3)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeMonster(3)"
+                >
+                Delete
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                Cambion
+              </td>
+              <td>
+                19
+              </td>
+              <td>
+                82
+              </td>
+              <td>
+                Medium Fiend
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateMonster(4)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeMonster(4)"
+                >
+                Delete
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                Swarm of Animated Books
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                22
+              </td>
+              <td>
+                Medium Swarm of Tiny Constructs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateMonster(5)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeMonster(5)"
+                >
+                Delete
+              </td>
+              <td>
+                5
+              </td>
+              <td>
+                Animated Broom
+              </td>
+              <td>
+                15
+              </td>
+              <td>
+                17
+              </td>
+              <td>
+                Small Construct
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <form 
+          action="/monsters.html"
+          method="GET"
+          name="monstersFormView" 
+          id="monstersFormView"
+        >
+        <fieldset>
+          <legend>
+            Monster Info
+          </legend>
+          <label
+            for="monsterName"
+          >
+            Monster Name
+          </label>
+          <input
+            type="text"
+            name="monsterName"
+            id="monsterName"
+            size="50"
+            required
+            aria-required="true"
+            placeholder="Monster Name"
+            autofocus
+          >
+          <label
+            for="armorClass"
+          >
+            Armor Class 
+          </label>
+          <input
+            type="number"
+            name="armorClass"
+            id="armorClass"
+            size="20"
+            min="0"
+            required
+            aria-required="true"
+            placeholder="0"
+            value="0"
+          >
+          <label
+            for="hitPoints"
+          >
+            Hit Points
+          </label>
+          <input
+            type="number"
+            name="hitPoints"
+            id="hitPoints"
+            size="20"
+            min="0"
+            required
+            aria-required="true"
+            placeholder="0"
+            value="0"
+          >
+          <label
+            for="type"
+          >
+            Type
+          </label>
+          <select 
+            name="type"
+            id="type"
+            required
+            aria-required="true"
+            >
+            <option value="0">&nbsp;</option>
+            <option value="1">Diminutive Animal</option>
+            <option value="1">Fey</option>
+            <option value="2">Medium Fiend</option>
+            <option value="3">Medium Swarm of Tiny Constructs</option>
+            <option value="4">Small Construct</option>
+          </select>
+            <div id="formButtons">
+              <label
+                for="submitMonsterInfo"
+              >
+              </label>
+              <button
+                type="submit"
+                name="submitMonsterInfo"
+                id="submitMonsterInfoBtn"
+                onclick="browseMonsters('monstersFormView')"
+              >
+                Save
+              </button>
+              <label
+                for="discardMonsterInfo"
+              >
+              </label>
+              <button
+                name="discardMonsterInfo"
+                id="discardMonsterInfoBtn"
+                onclick="browseMonsters('monstersFormView')"
+              >
+                Cancel
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
