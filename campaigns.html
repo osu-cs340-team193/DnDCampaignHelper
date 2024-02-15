@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DnD Campaign Manager</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <header>
+    <h1>
+      <img
+        src="android-chrome-192x192.png"
+        alt="DnD favicon"
+        title="DnD favicon"
+      />
+      Campaign Manager
+    </h1>
+  </header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./campaigns.html">Campaigns</a>
+    <a href="./locations.html">Locations</a>
+    <a href="./monsters.html">Monsters</a>
+    <a href="./actions.html">Actions</a>
+    <a href="./items.html">Items</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Campaigns</h2>
+      <article>
+        <table name="campaignView" id="campaignView">
+          <thead>
+            <tr>
+              <th>
+                <a 
+                  href="#"
+                  onclick="newCampaign()"
+                >
+                  New
+                </a>
+              </th>
+              <th>
+              </th>
+              <th>
+                ID
+              </th>
+              <th>
+                Title
+              </th>
+              <th>
+                start_date
+              </th>
+              <th>
+                end_date
+              </th>
+              <th>
+                dungeon_master
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateCampaign(1)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeCampaign(1)"
+                >
+                Delete
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                A Deep and Creeping Darkness
+              </td>
+              <td>
+                2024-01-16
+              </td>
+              <td>
+                20204-02-22
+              </td>
+              <td>
+                Marcus
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateCampaign(2)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeCampaign(2)"
+                >
+                Delete
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                The Price of Beauty
+              </td>
+              <td>
+                2022-04-16
+              </td>
+              <td>
+                2022-05-12
+              </td>
+              <td>
+                Liam Braxley
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateCampaign(3)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeCampaign(3)"
+                >
+                Delete
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                The Joy of Extradimensional Spaces
+              </td>
+              <td>
+                2023-03-30
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                Mohamed
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <form 
+          action="/campaigns.html"
+          method="GET"
+          name="campaignFormView" 
+          id="campaignFormView"
+        >
+        <fieldset>
+          <legend>
+            Campaign Info
+          </legend>
+          <label
+            for="campaignTitle"
+          >
+            Campaigns Title
+          </label>
+          <input
+            type="text"
+            name="campaignTitle"
+            id="campaignTitle"
+            size="50"
+            required
+            aria-required="true"
+            placeholder="Campaign Title"
+            autofocus
+          >
+          <label
+            for="start_date"
+          >
+            start_date 
+          </label>
+          <input
+            type="text"
+            name="start_date "
+            id="start_date "
+            size="20"
+            required
+            aria-required="true"
+            placeholder="start_date"
+            autofocus
+          >
+          <label
+            for="end_date"
+          >
+            end_date
+          </label>
+          <input
+            type="text"
+            name="end_date"
+            id="end_date"
+            size="20"
+            required
+            aria-required="true"
+            placeholder="end_date"
+            autofocus
+          >
+          <label
+            for="dungeon_master"
+          >
+            dungeon_master
+          </label>
+          <input
+          type="text"
+          name="dungeon_master"
+          id="dungeon_master"
+          size="30"
+          required
+          aria-required="true"
+          placeholder="dungeon_master"
+          autofocus
+        >
+            <div id="formButtons">
+              <label
+                for="submitCampaignInfo"
+              >
+              </label>
+              <button
+                type="submit"
+                name="submitCampaignInfo"
+                id="submitCampaignInfoBtn"
+                onclick="browseCampaign('campaignFormView')"
+              >
+                Save
+              </button>
+              <label
+                for="discardCampaignInfo"
+              >
+              </label>
+              <button
+                name="discardCampaignInfo"
+                id="discardCampaignInfoBtn"
+                onclick="browseCampaign('campaignFormView')"
+              >
+                Cancel
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

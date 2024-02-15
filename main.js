@@ -97,3 +97,70 @@ function updateItem(itemId)
   document.getElementById('value').value = '5';
   document.getElementById('weight').value = '1';
 }
+
+/* Campaigns */
+function newCampaign()
+{
+  /* hide table view */
+  document.getElementById('campaignView').style.visibility = 'collapse';
+
+  /* show form view */
+  document.getElementById('campaignFormView').style.visibility = 'visible';
+}
+
+function browseCampaigns(curView)
+{
+  /* hide form view */
+  document.getElementById(curView).style.visibility = 'collapse';
+
+  /* show table view */
+  document.getElementById('campaignView').style.visibility = 'visible';
+}
+
+function updateCampaign(campaignId)
+{
+  /* hide table view */
+  document.getElementById('campaignView').style.visibility = 'collapse';
+
+  /* show form view */
+  document.getElementById('campaignFormView').style.visibility = 'visible';
+
+  /* populate form with sample data */
+  document.getElementById('campaignTitle').value = 'A Deep and Creeping Darkness';
+  document.getElementById('start_date').value = '2024-01-16';
+  document.getElementById('end_date').value = '20204-02-22';
+  document.getElementById('dungeon_master').value = 'Marcus';
+}
+
+/* Location */
+function newLocation()
+{
+  /* hide table view */
+  document.getElementById('locationView').style.visibility = 'collapse';
+
+  /* show form view */
+  document.getElementById('locationsFormView').style.visibility = 'visible';
+}
+
+function browseLocations(curView)
+{
+  /* hide form view */
+  document.getElementById(curView).style.visibility = 'collapse';
+
+  /* show table view */
+  document.getElementById('locationView').style.visibility = 'visible';
+}
+
+function updateLocation(locationId)
+{
+  /* hide table view */
+  document.getElementById('locationView').style.visibility = 'collapse';
+
+  /* show form view */
+  document.getElementById('locationsFormView').style.visibility = 'visible';
+
+  /* populate form with sample data */
+  document.getElementById('campaign_id').value = '1';
+  document.getElementById('locationName').value = 'Chamber of Weeping';
+  document.getElementById('locationDescription').value = 'Thick, velvety black moss covers every surface...';
+}

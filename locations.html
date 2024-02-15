@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DnD Campaign Manager</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <header>
+    <h1>
+      <img
+        src="android-chrome-192x192.png"
+        alt="DnD favicon"
+        title="DnD favicon"
+      />
+      Campaign Manager
+    </h1>
+  </header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./campaigns.html">Campaigns</a>
+    <a href="./locations.html">Locations</a>
+    <a href="./monsters.html">Monsters</a>
+    <a href="./actions.html">Actions</a>
+    <a href="./items.html">Items</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Locations</h2>
+      <article>
+        <table name="locationView" id="locationView">
+          <thead>
+            <tr>
+              <th>
+                <a 
+                  href="#"
+                  onclick="newLocation()"
+                >
+                  New
+                </a>
+              </th>
+              <th>
+              </th>
+              <th>
+                ID
+              </th>
+              <th>
+                Campaign ID
+              </th>
+              <th>
+                Location Name
+              </th>
+              <th>
+                Location Description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateLocation(1)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeLocation(1)"
+                >
+                Delete
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                Chamber of Weeping
+              </td>
+              <td>
+                Thick, velvety black moss covers every surface...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateLocation(2)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeLocation(2)"
+                >
+                Delete
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+               Southern Wing
+              </td>
+              <td>
+                This tunnel ends at a small chamber that holds...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateLocation(3)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeLocation(3)"
+                >
+                Delete
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                Lobby
+              </td>
+              <td>
+               A large lobby, the air heavy with the scent of...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateLocation(4)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeLocation(4)"
+                >
+                Delete
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                Ilmar's Room
+              </td>
+              <td>
+                A cluttered room whose occupant has been staying...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateLocation(4)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeLocation(4)"
+                >
+                Delete
+              </td>
+              <td>
+                5
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                Library
+              </td>
+              <td>
+                Tall shelves filled with books line the walls...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="#"
+                  onclick="updateLocation(6)"
+                >
+                Edit
+              </td>
+              <td>
+                <a
+                  href="#"
+                  onclick="removeLocation(6)"
+                >
+                Delete
+              </td>
+              <td>
+                6
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                Excercise Room
+              </td>
+              <td>
+                This room contains a battered wooden manneguin...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <form 
+          action="/locations.html"
+          method="GET"
+          name="locationsFormView" 
+          id="locationsFormView"
+        >
+        <fieldset>
+          <legend>
+            Location Info
+          </legend>
+          <label
+            for="Campaign ID"
+          >
+          Campaign ID
+          </label>
+          <input
+            type="text"
+            name="campaign_id"
+            id="campaign_id"
+            size="10"
+            required
+            aria-required="true"
+            placeholder="Campaign Id"
+            autofocus
+          >
+          <label
+            for="locationName"
+          >
+            Location Name
+          </label>
+          <input
+            type="text"
+            name="locationName"
+            id="locationName"
+            size="10"
+            required
+            aria-required="true"
+            placeholder="Location Name"
+            autofocus
+            >
+          <label
+            for="locationDescription"
+          >
+            Description
+          </label>
+          <textarea
+            name="locationDescription"
+            id="locationDescription"
+            maxlength="500"
+            placeholder="Location description..."
+          >
+          </textarea> 
+          <div id="formButtons">
+            <label
+              for="submitLocationInfo"
+            >
+            </label>
+            <button
+              type="submit"
+              name="submitLocationInfo"
+              id="submitLocationInfoBtn"
+              onclick="browseLocations('locationsFormView')"
+            >
+              Save
+            </button>
+            <label
+              for="discardLocationInfo"
+            >
+            </label>
+            <button
+              name="discardLocationInfo"
+              id="discardLocationInfoBtn"
+              onclick="browseLocations('locationsFormView')"
+            >
+              Cancel
+            </button>
+          </div>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
