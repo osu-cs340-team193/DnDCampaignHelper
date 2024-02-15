@@ -127,9 +127,9 @@ function updateCampaign(campaignId)
 
   /* populate form with sample data */
   document.getElementById('campaignTitle').value = 'A Deep and Creeping Darkness';
-  document.getElementById('start_date').value = '2024-01-16';
-  document.getElementById('end_date').value = '20204-02-22';
-  document.getElementById('dungeon_master').value = 'Marcus';
+  document.getElementById('startDate').value = '2024-01-16';
+  document.getElementById('endDate').value = '2024-02-22';
+  document.getElementById('dungeonMaster').value = 'Marcus';
 }
 
 /* Location */
