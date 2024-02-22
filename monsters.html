@@ -273,24 +273,100 @@
             placeholder="0"
             value="0"
           >
-          <label
-            for="type"
-          >
-            Type
+          <!-- Monster Type -->
+          <label for="monster_type">
+            Monster Type
           </label>
-          <select 
-            name="type"
-            id="type"
+          <input
+            list="monsterType"
+            id="monster_type"
+            name="monster_type"
+            type="text"
+            size="30"
             required
             aria-required="true"
-            >
-            <option value="0">&nbsp;</option>
-            <option value="1">Diminutive Animal</option>
-            <option value="1">Fey</option>
-            <option value="2">Medium Fiend</option>
-            <option value="3">Medium Swarm of Tiny Constructs</option>
-            <option value="4">Small Construct</option>
-          </select>
+            placeholder="Monster Type"
+          >
+          <datalist id="monsterType">
+            <option value="Diminutive Animal">
+            <option value="Fey">
+            <option value="Medium Fiend">
+            <option value="Medium Swarm of Tiny Constructs">
+            <option value="Small Constructs">
+          </datalist>
+
+          <!-- Monster Locations -->
+          <label for="locationMonsters" required>
+            Locations
+          </label>
+
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="locations"
+              name="campaignLocations"
+              value="1"
+            />
+            <label for="1">
+              Chamber of Weeping
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="locations"
+              name="campaignLocations"
+              value="2"
+            />
+            <label for="2">
+              Southern Wing
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="locations"
+              name="campaignLocations"
+              value="3"
+            />
+            <label for="3">
+              Lobby
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="locations"
+              name="campaignLocations"
+              value="4"
+            />
+            <label for="4">
+              IImar's Room
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="locations"
+              name="campaignLocations"
+              value="5"
+            />
+            <label for="5">
+              Library
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="locations"
+              name="campaignLocations"
+              value="5"
+            />
+            <label for="6">
+              Exercise Room
+            </label>
+          </div>
+
             <div id="formButtons">
               <label
                 for="submitMonsterInfo"

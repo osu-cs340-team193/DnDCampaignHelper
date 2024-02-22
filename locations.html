@@ -54,7 +54,7 @@
                 ID
               </th>
               <th>
-                Campaign ID
+                Campaign Name 
               </th>
               <th>
                 Location Name
@@ -82,7 +82,7 @@
                 1
               </td>
               <td>
-                1
+                A Deep and Creeping Darkness
               </td>
               <td>
                 Chamber of Weeping
@@ -108,7 +108,7 @@
                 2
               </td>
               <td>
-                1
+                A Deep and Creeping Darkness
               </td>
               <td>
                Southern Wing
@@ -134,7 +134,7 @@
                 3
               </td>
               <td>
-                2
+                The Price of Beauty
               </td>
               <td>
                 Lobby
@@ -160,7 +160,7 @@
                 4
               </td>
               <td>
-                2
+                The Price of Beauty
               </td>
               <td>
                 Ilmar's Room
@@ -186,7 +186,7 @@
                 5
               </td>
               <td>
-                3
+                The Joy of Extradimensional Spaces
               </td>
               <td>
                 Library
@@ -212,7 +212,7 @@
                 6
               </td>
               <td>
-                3
+                The Joy of Extradimensional Spaces
               </td>
               <td>
                 Excercise Room
@@ -234,39 +234,44 @@
           <legend>
             Location Info
           </legend>
-          <label
-            for="Campaign ID"
-          >
-          Campaign ID
+
+          <!-- Campaign Name -->
+          <label for="campaign_name">
+            Campaign Name 
           </label>
           <input
+            list="campaignName"
+            id="campaign_name"
+            name="campaign_name"
             type="text"
-            name="campaign_id"
-            id="campaign_id"
-            size="10"
+            size="30"
             required
             aria-required="true"
-            placeholder="Campaign Id"
+            placeholder="Campaign Name"
             autofocus
           >
-          <label
-            for="locationName"
-          >
+          <datalist id="campaignName">
+            <option value="A Deep and Creeping Darkness">
+            <option value="The Price of Beauty">
+            <option value="The Joy of Extradimensional Spaces">
+          </datalist>
+
+          <!-- Location Name -->
+          <label for="locationName">
             Location Name
           </label>
           <input
             type="text"
             name="locationName"
             id="locationName"
-            size="10"
+            size="30"
             required
             aria-required="true"
             placeholder="Location Name"
-            autofocus
             >
-          <label
-            for="locationDescription"
-          >
+
+          <!-- Location Description -->
+          <label for="locationDescription">
             Description
           </label>
           <textarea
@@ -276,6 +281,129 @@
             placeholder="Location description..."
           >
           </textarea> 
+
+          <!-- Location Monsters -->
+          <label for="locationMonsters">
+            Monsters
+          </label>
+
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="monsters"
+              name="locationMonsters"
+              value="1"
+            />
+            <label for="1">
+              Swarm of bats
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="monsters"
+              name="locationMonsters"
+              value="2"
+            />
+            <label for="2">
+              Meenlock
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="monsters"
+              name="locationMonsters"
+              value="3"
+            />
+            <label for="3">
+              Cambion
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="monsters"
+              name="locationMonsters"
+              value="4"
+            />
+            <label for="4">
+              Swarm of Animated Books
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="monsters"
+              name="locationMonsters"
+              value="5"
+            />
+            <label for="5">
+              Animated Broom
+            </label>
+          </div>
+
+          <!-- Location Items -->
+          <label for="locationItems">
+            Items
+          </label>
+
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="items"
+              name="locationItems"
+              value="1"
+            />
+            <label for="1">
+              Amulet
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="items"
+              name="locationItems"
+              value="2"
+            />
+            <label for="2">
+              Chain Shirt
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="items"
+              name="locationItems"
+              value="3"
+            />
+            <label for="3">
+              Dagger
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="items"
+              name="locationItems"
+              value="4"
+            />
+            <label for="4">
+              Quarterstaff
+            </label>
+          </div>
+          <div class="namedCheckbox">
+            <input
+              type="checkbox"
+              id="items"
+              name="locationItems"
+              value="5"
+            />
+            <label for="5">
+              Dart
+            </label>
+          </div>
+
           <div id="formButtons">
             <label
               for="submitLocationInfo"

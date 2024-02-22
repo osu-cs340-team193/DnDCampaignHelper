@@ -93,6 +93,7 @@ a
 a:hover
 {
   color: var(--pink);
+  cursor: pointer;
 }
 
 main
@@ -199,6 +200,8 @@ label
   /* spacing between rows */
   margin-top: 15px;
   margin-bottom: 5px;
+
+  font-size: 1.15em;
 }
 
 input[type="text"]
@@ -262,4 +265,22 @@ button
 button:hover
 {
   background-color: var(--pink);
+}
+
+.namedCheckbox
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.namedCheckbox input
+{
+  margin-right: 20px;
+}
+
+.namedCheckbox label
+{
+  text-align: center;
+  padding-bottom: 8px;
+  font-size: 1em;
 }
