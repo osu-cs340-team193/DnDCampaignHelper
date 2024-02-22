@@ -32,13 +32,14 @@ WHERE campaign_id = :campaign_id_from_table
 Locations
 */
 
--- Retrieve all Locations entries
-SELECT * 
-FROM Locations;
+-- Retrieve all Locations entries and join to show the relevant campaign name instead of the title
+SELECT C.title AS "Campaign Name", L.location_name, L.location_description
+FROM Locations L
+INNER JOIN Campaigns C ON Campaigns.campaign_id = Locations.campaign_id;
 
 -- Add a new location
 INSERT INTO Locations (campaign_id, location_name, location_description)
-VALUE (:campaign_id_from_campaigns_dropdown, :location_name_Input, :location_description_Input)
+VALUE (:campaign_id_matching_title_from_campaigns_dropdown, :location_name_Input, :location_description_Input)
 
 -- Delete location
 DELETE
@@ -77,8 +78,9 @@ Actions
 */
 
 -- Retrieve all actions
-SELECT *
-FROM Actions;
+SELECT A.action_name, M.monster_name AS "Monster Name", A.description
+FROM Actions A
+INNER JOIN Monsters M ON Monsters.monster_id = Actions.monster_id;
 
 -- Add a new action
 INSERT INTO Actions (action_name, monster_name, description)
@@ -121,10 +123,12 @@ WHERE item_id = :item_id_from_table
 Locations_Items
 */
 -- return all entries from table
-SELECT *
-FROM Locations_Items;
+SELECT L.location_name AS "Location Name", I.item_name AS "Item Name" 
+FROM Locations_Items LI
+	INNER JOIN Locations L ON Locations.location_id = Locations_Items.lid
+    INNER JOIN Items I ON Items.item_id = Locations_Items.iid;
 
--- add a new entry to the table from the Locations page in the form of a multi-select drop down of items
+-- add a new entry to the table from the Items page in the form of a multi-select drop down of possible location names
 INSERT INTO Locations_Items (lid, iid)
 VALUES (:location_id_Input, :item_id_Input)
 
@@ -133,15 +137,17 @@ DELETE FROM Locations_Items
 WHERE lid = :location_id_input AND iid = :item_id_input
 
 /* 
-Monster_Items
+Locations_Monsters
 */
--- return all entries from table
-SELECT *
-FROM Locations_Items;
+-- return all entries from table in a user friendly manner (using names)
+SELECT L.location_name AS "Location Name", M.monster_name AS "Monster Name"
+FROM Locations_Monsters
+	INNER JOIN Locations L ON Locations.location_id = Locations_Monster.lid
+    INNER JOIN Monsters M ON Monsters.monster_id = Locations_Monsters.mid;
 
--- add a new entry to the table from the Locations page in the form of a multi-select drop down of items
-INSERT INTO Locations_Items (lid, iid)
-VALUES (:location_id_Input, :item_id_Input)
+-- add a new entry to the table from the Monsters page in the form of a multi-select drop down of possible location names
+INSERT INTO Locations_Monsters (lid, mid)
+VALUES (:location_id_Input, :monster_id_Input)
 
 -- delete a record
 DELETE FROM Locations_Items
