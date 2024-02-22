@@ -24,8 +24,9 @@ FROM Campaigns
 WHERE campaign_id = :campaign_id_from_table;
 
 -- Update a campaign
-UPDATE Campaigns SET title = :titleInput, start_date = :start_date_Input, 
-					 end_date = :end_date_Input, dungeon_master = :dungeon_master_Input
+UPDATE Campaigns 
+SET title = :titleInput, start_date = :start_date_Input, end_date = :end_date_Input, dungeon_master = :dungeon_master_Input
+WHERE campaign_id = :campaign_id_from_table                     
                      
 /*
 Locations
@@ -45,8 +46,9 @@ FROM Locations
 WHERE location_id = :location_id_from_table
 
 -- Update a location
-UPDATE Locations SET campaign_id = :campaign_id_from_campaigns_Dropdown, location_name = :location_name_Input,
-					 location_description = :location_description_Input
+UPDATE Locations 
+SET campaign_id = :campaign_id_from_campaigns_Dropdown, location_name = :location_name_Input, location_description = :location_description_Input
+WHERE location_id = :location_id_from_table
 
 /*
 Monsters
@@ -66,8 +68,9 @@ FROM Monsters
 WHERE monster_id = :monster_id_from_table
 
 -- Update a monster
-UPDATE Monsters SET monster_name = :monster_name_Input, armor_class = :armor_class_Input, 
-					monster_type = :monster_type_Input
+UPDATE Monsters 
+SET monster_name = :monster_name_Input, armor_class = :armor_class_Input, monster_type = :monster_type_Input
+WHERE monster_id = :monster_id_from_table
 
 /*
 Actions
@@ -87,9 +90,10 @@ FROM Actions
 WHERE action_id = :action_id_from_table
 
 -- Update action
-UPDATE Actions SET action_name = :action_name_Input, monster_name = :monster_ID_as_name_Dropdown,
-					 description = :description_Input
-                     
+UPDATE Actions 
+SET action_name = :action_name_Input, monster_name = :monster_ID_as_name_Dropdown, description = :description_Input
+WHERE action_id = :action_id_from_table                    
+                    
 /*
 Items
 */
@@ -108,7 +112,9 @@ FROM Items
 WHERE item_id = :item_id_from_table
 
 -- Update item
-UPDATE Items SET item_name = :item_name_Input, value = :value_Input, weight = :weight_Input
+UPDATE Items 
+SET item_name = :item_name_Input, value = :value_Input, weight = :weight_Input
+WHERE item_id = :item_id_from_table
 
 
 /* 
