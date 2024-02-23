@@ -421,7 +421,7 @@ WHERE item_id = :item_id_from_table
 
 
 Locations_Items
-(no associate page on UI)
+(no associated page on UI)
 
 
 *****************************************************************************************/
@@ -444,7 +444,7 @@ WHERE lid = :location_id_input AND iid = :item_id_input;
 
 
 Locations_Monsters
-(no associate page on UI)
+(no associated page on UI)
 
 
 *****************************************************************************************/
