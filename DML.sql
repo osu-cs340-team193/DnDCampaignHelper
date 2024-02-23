@@ -36,7 +36,7 @@ Action: User clicks create button while on the Campaigns page (nothing happens h
 *************************************/
 
 /*************************************
-Action: User clicks submit button on Locations/create page.
+Action: User clicks submit button on Campaigns/create page.
 *************************************/
 
 -- Add a new campaign
